@@ -29,7 +29,7 @@
 
 class TestCoroutine : public Coroutine {
 protected:
-	virtual void run();
+	virtual int run();
 };
 
 #endif

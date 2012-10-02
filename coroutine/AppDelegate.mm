@@ -39,20 +39,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-	self.window.backgroundColor = [UIColor whiteColor];
+	[self.window setRootViewController:[[[UIViewController alloc] init] autorelease]];
 	[self.window makeKeyAndVisible];
 
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		std::cout << "BEGIN" << std::endl;
-		
-		const Coroutine& coroutine = TestCoroutine();
-		while (!coroutine.didFinish()) {
-			std::cout << "FOO";
-			coroutine();
-		}
-		
-		std::cout << "END" << std::endl;
-	});
+	std::cout << "BEGIN" << std::endl;
+	
+	const Coroutine& coroutine = TestCoroutine();
+	while (!coroutine.didFinish()) {
+		std::cout << "FOO";
+		int ret = coroutine();
+		std::cout << "\t" << ret << std::endl;
+	}
+	
+	std::cout << "END" << std::endl;
 	
 	return YES;
 }

@@ -35,7 +35,7 @@ Coroutine::~Coroutine() {
 	delete [] _stack;
 }
 
-void Coroutine::operator()() const {
+int Coroutine::operator()() const {
 	// Move SP to _stackBase, so the prolog can be saved directly to base of the coroutine stack.
 	asm volatile (
 		"\n	ldr			r1, [r0, #12]"
@@ -77,7 +77,10 @@ void Coroutine::operator()() const {
 	
 	// Return to coroutine.
 	asm volatile (
-		"\n	b			L_RETURN"
+#if !defined(__OPTIMIZE__)
+		"\n	add			sp, #8"
+#endif
+		"\n	bx			lr"
 	);
 	
 	// The coroutine is run for the first time. Mark as started.
@@ -94,17 +97,17 @@ void Coroutine::operator()() const {
 		"\n	blx			r1"
 	);
 	
-	// Restore 'this' pointer.
+	// Restore 'this' pointer to r2, r0 holds return value.
 	asm volatile (
-		"\n	ldr			r0, [sp]"
+		"\n	ldr			r2, [sp]"
 		"\n	add			sp, #4"
 	);
 	
 	// Mark as finished.
 	asm volatile (
-		"\n	ldr			r1, [r0, #4]"
+		"\n	ldr			r1, [r2, #4]"
 		"\n	orr			r1, r1, #2"
-		"\n	str			r1, [r0, #4]"
+		"\n	str			r1, [r2, #4]"
 	);
 	
 	// Restore all nonvolatile registers and original SP.
@@ -115,9 +118,12 @@ void Coroutine::operator()() const {
 		"\n	mov			sp, r2"
 	);
 	
-	// Substitute for return statement. Solves the problem of any prolog added by compiler e.g. for debugging.
+	// Return to caller.
 	asm volatile (
-		"\nL_RETURN:"
+#if !defined(__OPTIMIZE__)
+		"\n	add			sp, #8"
+#endif
+		"\n	bx			lr"
 	);
 }
 
@@ -125,7 +131,7 @@ bool Coroutine::didFinish() const {
 	return _stateFlags & StateFinished;
 }
 
-void Coroutine::yield() {
+void Coroutine::yield(int ret) {
 	// Save nonvolatile registers.
 	asm volatile (
 		"\n	stmfd		sp!, {r4-r7, lr}"
@@ -139,8 +145,13 @@ void Coroutine::yield() {
 	
 	// Move SP to caller context near the base of the stack (_stackBase).
 	asm volatile (
-		"\n	ldr			r1, [r0, #12]"
-		"\n	sub			sp, r1, #36"
+		"\n	ldr			r2, [r0, #12]"
+		"\n	sub			sp, r2, #36"
+	);
+	
+	// Move ret to result register.
+	asm volatile (
+		"\n	mov			r0, r1"
 	);
 	
 	// Restore original context and SP.

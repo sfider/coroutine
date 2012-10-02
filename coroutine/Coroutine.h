@@ -42,14 +42,14 @@ public:
 	Coroutine();
 	virtual ~Coroutine();
 	
-	void operator()() const;
+	int operator()() const;
 	
 	bool didFinish() const;
 	
 protected:
-	virtual void run() = 0;
+	virtual int run() = 0;
 	
-	void yield();
+	void yield(int ret);
 };
 
 #endif

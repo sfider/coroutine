@@ -26,13 +26,15 @@
 
 #include <iostream>
 
-void TestCoroutine::run() {
+int TestCoroutine::run() {
 	for (int i = 0; i != 16; ++i) {
 		
-		std::cout << "BAR " << i << std::endl;
+		std::cout << "BAR\t" << i;
 		
 		if (i != 15) {
-			yield();
+			yield(i);
 		}
 	}
+	
+	return 15;
 }
