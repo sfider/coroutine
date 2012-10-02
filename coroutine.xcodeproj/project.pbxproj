@@ -14,10 +14,31 @@
 		712D2F9B15D44F56002FC37E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9A15D44F56002FC37E /* AppDelegate.mm */; };
 		712D2FA615D453F3002FC37E /* Coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA415D453F3002FC37E /* Coroutine.cpp */; };
 		712D2FA915D456B0002FC37E /* TestCoroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA715D456B0002FC37E /* TestCoroutine.cpp */; };
+		715FB5E2161B83BF00AD3B68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9615D44F56002FC37E /* main.m */; };
+		715FB5E3161B83BF00AD3B68 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9A15D44F56002FC37E /* AppDelegate.mm */; };
+		715FB5E4161B83BF00AD3B68 /* Coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA415D453F3002FC37E /* Coroutine.cpp */; };
+		715FB5E5161B83BF00AD3B68 /* TestCoroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA715D456B0002FC37E /* TestCoroutine.cpp */; };
+		715FB5E7161B83BF00AD3B68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8A15D44F56002FC37E /* UIKit.framework */; };
+		715FB5E8161B83BF00AD3B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8C15D44F56002FC37E /* Foundation.framework */; };
+		715FB5EA161B83BF00AD3B68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 712D2F9315D44F56002FC37E /* InfoPlist.strings */; };
+		715FB5F3161B841500AD3B68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9615D44F56002FC37E /* main.m */; };
+		715FB5F4161B841500AD3B68 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9A15D44F56002FC37E /* AppDelegate.mm */; };
+		715FB5F5161B841500AD3B68 /* Coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA415D453F3002FC37E /* Coroutine.cpp */; };
+		715FB5F6161B841500AD3B68 /* TestCoroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA715D456B0002FC37E /* TestCoroutine.cpp */; };
+		715FB5F8161B841500AD3B68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8A15D44F56002FC37E /* UIKit.framework */; };
+		715FB5F9161B841500AD3B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8C15D44F56002FC37E /* Foundation.framework */; };
+		715FB5FB161B841500AD3B68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 712D2F9315D44F56002FC37E /* InfoPlist.strings */; };
+		715FB604161B844600AD3B68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9615D44F56002FC37E /* main.m */; };
+		715FB605161B844600AD3B68 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9A15D44F56002FC37E /* AppDelegate.mm */; };
+		715FB606161B844600AD3B68 /* Coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA415D453F3002FC37E /* Coroutine.cpp */; };
+		715FB607161B844600AD3B68 /* TestCoroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA715D456B0002FC37E /* TestCoroutine.cpp */; };
+		715FB609161B844600AD3B68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8A15D44F56002FC37E /* UIKit.framework */; };
+		715FB60A161B844600AD3B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8C15D44F56002FC37E /* Foundation.framework */; };
+		715FB60C161B844600AD3B68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 712D2F9315D44F56002FC37E /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		712D2F8615D44F56002FC37E /* coroutine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coroutine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		712D2F8615D44F56002FC37E /* coroutine-clang-O0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coroutine-clang-O0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		712D2F8A15D44F56002FC37E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		712D2F8C15D44F56002FC37E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		712D2F9215D44F56002FC37E /* coroutine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "coroutine-Info.plist"; sourceTree = "<group>"; };
@@ -30,6 +51,11 @@
 		712D2FA515D453F3002FC37E /* Coroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coroutine.h; sourceTree = "<group>"; };
 		712D2FA715D456B0002FC37E /* TestCoroutine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCoroutine.cpp; sourceTree = "<group>"; };
 		712D2FA815D456B0002FC37E /* TestCoroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCoroutine.h; sourceTree = "<group>"; };
+		71572BF4161B8661002448DE /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
+		71572BF5161B8661002448DE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		715FB5EE161B83BF00AD3B68 /* coroutine-clang-Os.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coroutine-clang-Os.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		715FB5FF161B841500AD3B68 /* coroutine-gcc-O0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coroutine-gcc-O0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		715FB610161B844600AD3B68 /* coroutine-gcc-Os.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coroutine-gcc-Os.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +68,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		715FB5E6161B83BF00AD3B68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				715FB5E7161B83BF00AD3B68 /* UIKit.framework in Frameworks */,
+				715FB5E8161B83BF00AD3B68 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		715FB5F7161B841500AD3B68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				715FB5F8161B841500AD3B68 /* UIKit.framework in Frameworks */,
+				715FB5F9161B841500AD3B68 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		715FB608161B844600AD3B68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				715FB609161B844600AD3B68 /* UIKit.framework in Frameworks */,
+				715FB60A161B844600AD3B68 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,13 +104,18 @@
 				712D2F9015D44F56002FC37E /* coroutine */,
 				712D2F8915D44F56002FC37E /* Frameworks */,
 				712D2F8715D44F56002FC37E /* Products */,
+				71572BF4161B8661002448DE /* LICENSE.md */,
+				71572BF5161B8661002448DE /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
 		712D2F8715D44F56002FC37E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				712D2F8615D44F56002FC37E /* coroutine.app */,
+				712D2F8615D44F56002FC37E /* coroutine-clang-O0.app */,
+				715FB5EE161B83BF00AD3B68 /* coroutine-clang-Os.app */,
+				715FB5FF161B841500AD3B68 /* coroutine-gcc-O0.app */,
+				715FB610161B844600AD3B68 /* coroutine-gcc-Os.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,9 +157,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		712D2F8515D44F56002FC37E /* coroutine */ = {
+		712D2F8515D44F56002FC37E /* coroutine-clang-O0 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 712D2F9E15D44F56002FC37E /* Build configuration list for PBXNativeTarget "coroutine" */;
+			buildConfigurationList = 712D2F9E15D44F56002FC37E /* Build configuration list for PBXNativeTarget "coroutine-clang-O0" */;
 			buildPhases = (
 				712D2F8215D44F56002FC37E /* Sources */,
 				712D2F8315D44F56002FC37E /* Frameworks */,
@@ -111,9 +169,60 @@
 			);
 			dependencies = (
 			);
-			name = coroutine;
+			name = "coroutine-clang-O0";
 			productName = coroutine;
-			productReference = 712D2F8615D44F56002FC37E /* coroutine.app */;
+			productReference = 712D2F8615D44F56002FC37E /* coroutine-clang-O0.app */;
+			productType = "com.apple.product-type.application";
+		};
+		715FB5E0161B83BF00AD3B68 /* coroutine-clang-Os */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 715FB5EB161B83BF00AD3B68 /* Build configuration list for PBXNativeTarget "coroutine-clang-Os" */;
+			buildPhases = (
+				715FB5E1161B83BF00AD3B68 /* Sources */,
+				715FB5E6161B83BF00AD3B68 /* Frameworks */,
+				715FB5E9161B83BF00AD3B68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "coroutine-clang-Os";
+			productName = coroutine;
+			productReference = 715FB5EE161B83BF00AD3B68 /* coroutine-clang-Os.app */;
+			productType = "com.apple.product-type.application";
+		};
+		715FB5F1161B841500AD3B68 /* coroutine-gcc-O0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 715FB5FC161B841500AD3B68 /* Build configuration list for PBXNativeTarget "coroutine-gcc-O0" */;
+			buildPhases = (
+				715FB5F2161B841500AD3B68 /* Sources */,
+				715FB5F7161B841500AD3B68 /* Frameworks */,
+				715FB5FA161B841500AD3B68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "coroutine-gcc-O0";
+			productName = coroutine;
+			productReference = 715FB5FF161B841500AD3B68 /* coroutine-gcc-O0.app */;
+			productType = "com.apple.product-type.application";
+		};
+		715FB602161B844600AD3B68 /* coroutine-gcc-Os */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 715FB60D161B844600AD3B68 /* Build configuration list for PBXNativeTarget "coroutine-gcc-Os" */;
+			buildPhases = (
+				715FB603161B844600AD3B68 /* Sources */,
+				715FB608161B844600AD3B68 /* Frameworks */,
+				715FB60B161B844600AD3B68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "coroutine-gcc-Os";
+			productName = coroutine;
+			productReference = 715FB610161B844600AD3B68 /* coroutine-gcc-Os.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,7 +246,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				712D2F8515D44F56002FC37E /* coroutine */,
+				712D2F8515D44F56002FC37E /* coroutine-clang-O0 */,
+				715FB5E0161B83BF00AD3B68 /* coroutine-clang-Os */,
+				715FB5F1161B841500AD3B68 /* coroutine-gcc-O0 */,
+				715FB602161B844600AD3B68 /* coroutine-gcc-Os */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +260,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				712D2F9515D44F56002FC37E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		715FB5E9161B83BF00AD3B68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				715FB5EA161B83BF00AD3B68 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		715FB5FA161B841500AD3B68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				715FB5FB161B841500AD3B68 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		715FB60B161B844600AD3B68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				715FB60C161B844600AD3B68 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +298,39 @@
 				712D2F9B15D44F56002FC37E /* AppDelegate.mm in Sources */,
 				712D2FA615D453F3002FC37E /* Coroutine.cpp in Sources */,
 				712D2FA915D456B0002FC37E /* TestCoroutine.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		715FB5E1161B83BF00AD3B68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				715FB5E2161B83BF00AD3B68 /* main.m in Sources */,
+				715FB5E3161B83BF00AD3B68 /* AppDelegate.mm in Sources */,
+				715FB5E4161B83BF00AD3B68 /* Coroutine.cpp in Sources */,
+				715FB5E5161B83BF00AD3B68 /* TestCoroutine.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		715FB5F2161B841500AD3B68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				715FB5F3161B841500AD3B68 /* main.m in Sources */,
+				715FB5F4161B841500AD3B68 /* AppDelegate.mm in Sources */,
+				715FB5F5161B841500AD3B68 /* Coroutine.cpp in Sources */,
+				715FB5F6161B841500AD3B68 /* TestCoroutine.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		715FB603161B844600AD3B68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				715FB604161B844600AD3B68 /* main.m in Sources */,
+				715FB605161B844600AD3B68 /* AppDelegate.mm in Sources */,
+				715FB606161B844600AD3B68 /* Coroutine.cpp in Sources */,
+				715FB607161B844600AD3B68 /* TestCoroutine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +415,78 @@
 			};
 			name = Release;
 		};
+		715FB5EC161B83BF00AD3B68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "coroutine/coroutine-Prefix.pch";
+				INFOPLIST_FILE = "coroutine/coroutine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		715FB5ED161B83BF00AD3B68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "coroutine/coroutine-Prefix.pch";
+				INFOPLIST_FILE = "coroutine/coroutine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		715FB5FD161B841500AD3B68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "coroutine/coroutine-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "coroutine/coroutine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		715FB5FE161B841500AD3B68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "coroutine/coroutine-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "coroutine/coroutine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		715FB60E161B844600AD3B68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "coroutine/coroutine-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "coroutine/coroutine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		715FB60F161B844600AD3B68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "coroutine/coroutine-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "coroutine/coroutine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -258,11 +499,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		712D2F9E15D44F56002FC37E /* Build configuration list for PBXNativeTarget "coroutine" */ = {
+		712D2F9E15D44F56002FC37E /* Build configuration list for PBXNativeTarget "coroutine-clang-O0" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				712D2F9F15D44F56002FC37E /* Debug */,
 				712D2FA015D44F56002FC37E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		715FB5EB161B83BF00AD3B68 /* Build configuration list for PBXNativeTarget "coroutine-clang-Os" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				715FB5EC161B83BF00AD3B68 /* Debug */,
+				715FB5ED161B83BF00AD3B68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		715FB5FC161B841500AD3B68 /* Build configuration list for PBXNativeTarget "coroutine-gcc-O0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				715FB5FD161B841500AD3B68 /* Debug */,
+				715FB5FE161B841500AD3B68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		715FB60D161B844600AD3B68 /* Build configuration list for PBXNativeTarget "coroutine-gcc-Os" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				715FB60E161B844600AD3B68 /* Debug */,
+				715FB60F161B844600AD3B68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

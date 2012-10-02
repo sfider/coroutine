@@ -75,10 +75,9 @@ void Coroutine::operator()() const {
 		"\n	ldmfd		sp!, {r4-r7, lr}"
 	);
 	
-	// Return to coroutine. SP has to be incremeanted, because r0 has been automatically stored there by the compiler.
+	// Return to coroutine.
 	asm volatile (
-		"\n	add			sp, #4"
-		"\n	mov			pc, lr"
+		"\n	b			L_RETURN"
 	);
 	
 	// The coroutine is run for the first time. Mark as started.
@@ -114,6 +113,11 @@ void Coroutine::operator()() const {
 		"\n	ldmfd		sp!, {r4-r7, lr}"
 		"\n	ldmfd		sp!, {r2}"
 		"\n	mov			sp, r2"
+	);
+	
+	// Substitute for return statement. Solves the problem of any prolog added by compiler e.g. for debugging.
+	asm volatile (
+		"\nL_RETURN:"
 	);
 }
 
