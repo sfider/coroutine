@@ -54,6 +54,7 @@ int Coroutine::operator()() const {
 		"\n	stmfd		sp!, {r4-r7, lr}"
 		"\n	add			r7, sp, #12"
 		"\n	stmfd		sp!, {r8, r10, r11}"
+		"\n	vstmdb		sp!, {d8-d15}"
 	);
 	
 	// Store 'this' pointer before calling coroutine.
@@ -76,6 +77,7 @@ int Coroutine::operator()() const {
 	
 	// The coroutine is run after it yielded. Load coroutine context.
 	asm volatile (
+		"\n	vldmia		sp!, {d8-d15}"
 		"\n	ldmfd		sp!, {r8, r10, r11}"
 		"\n	ldmfd		sp!, {r4-r7, lr}"
 	);
@@ -117,6 +119,7 @@ int Coroutine::operator()() const {
 	
 	// Restore all nonvolatile registers and original SP.
 	asm volatile (
+		"\n	vldmia		sp!, {d8-d15}"
 		"\n	ldmfd		sp!, {r8, r10, r11}"
 		"\n	ldmfd		sp!, {r4-r7, lr}"
 		"\n	ldmfd		sp!, {r2}"
@@ -141,6 +144,7 @@ void Coroutine::yield(int ret) {
 	asm volatile (
 		"\n	stmfd		sp!, {r4-r7, lr}"
 		"\n	stmfd		sp!, {r8, r10, r11}"
+		"\n	vstmdb		sp!, {d8-d15}"
 	);
 	
 	// Save SP to _stackPointer.
@@ -151,7 +155,7 @@ void Coroutine::yield(int ret) {
 	// Move SP to caller context near the base of the stack (_stackBase).
 	asm volatile (
 		"\n	ldr			r2, [r0, " COROUTINE_OFFSET_STACKBASE "]"
-		"\n	sub			sp, r2, #36"
+		"\n	sub			sp, r2, #100"
 	);
 	
 	// Move ret to result register.
@@ -161,6 +165,7 @@ void Coroutine::yield(int ret) {
 	
 	// Restore original context and SP.
 	asm volatile (
+		"\n	vldmia		sp!, {d8-d15}"
 		"\n	ldmfd		sp!, {r8, r10, r11}"
 		"\n	ldmfd		sp!, {r4-r7, lr}"
 		"\n	ldmfd		sp!, {r2}"
