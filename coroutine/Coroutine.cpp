@@ -26,6 +26,11 @@
 
 static const unsigned long StackSize = 4096;
 
+#define COROUTINE_OFFSET_STATEFLAGS		"#4"
+#define COROUTINE_OFFSET_STACK			"#8"
+#define COROUTINE_OFFSET_STACKBASE		"#12"
+#define COROUTINE_OFFSET_STACKPOINTER	"#16"
+
 Coroutine::Coroutine()
 	: _stateFlags(0)
 	, _stack(new uint8_t[StackSize])
@@ -38,7 +43,7 @@ Coroutine::~Coroutine() {
 int Coroutine::operator()() const {
 	// Move SP to _stackBase, so the prolog can be saved directly to base of the coroutine stack.
 	asm volatile (
-		"\n	ldr			r1, [r0, #12]"
+		"\n	ldr			r1, [r0, " COROUTINE_OFFSET_STACKBASE "]"
 		"\n	mov			r2, sp"
 		"\n	mov			sp, r1"
 	);
@@ -59,14 +64,14 @@ int Coroutine::operator()() const {
 	
 	// Check if the call has already started.
 	asm volatile (
-		"\n	ldr			r1, [r0, #4]"
+		"\n	ldr			r1, [r0, " COROUTINE_OFFSET_STATEFLAGS "]"
 		"\n	tst			r1, #1"
 		"\n	beq			L_FIRST"
 	);
 	
 	// Move SP to coroutine stack.
 	asm volatile (
-		"\n	ldr			sp, [r0, #16]"
+		"\n	ldr			sp, [r0, " COROUTINE_OFFSET_STACKPOINTER "]"
 	);
 	
 	// The coroutine is run after it yielded. Load coroutine context.
@@ -87,7 +92,7 @@ int Coroutine::operator()() const {
 	asm volatile (
 		"\nL_FIRST:"
 		"\n	orr			r1, r1, #1"
-		"\n	str			r1, [r0, #4]"
+		"\n	str			r1, [r0, " COROUTINE_OFFSET_STATEFLAGS "]"
 	);
 	
 	// Call run(), it is the second virtual function.
@@ -105,9 +110,9 @@ int Coroutine::operator()() const {
 	
 	// Mark as finished.
 	asm volatile (
-		"\n	ldr			r1, [r2, #4]"
+		"\n	ldr			r1, [r2, " COROUTINE_OFFSET_STATEFLAGS "]"
 		"\n	orr			r1, r1, #2"
-		"\n	str			r1, [r2, #4]"
+		"\n	str			r1, [r2, " COROUTINE_OFFSET_STATEFLAGS "]"
 	);
 	
 	// Restore all nonvolatile registers and original SP.
@@ -140,12 +145,12 @@ void Coroutine::yield(int ret) {
 	
 	// Save SP to _stackPointer.
 	asm volatile (
-		"\n	str			sp, [r0, #16]"
+		"\n	str			sp, [r0, " COROUTINE_OFFSET_STACKPOINTER "]"
 	);
 	
 	// Move SP to caller context near the base of the stack (_stackBase).
 	asm volatile (
-		"\n	ldr			r2, [r0, #12]"
+		"\n	ldr			r2, [r0, " COROUTINE_OFFSET_STACKBASE "]"
 		"\n	sub			sp, r2, #36"
 	);
 	
