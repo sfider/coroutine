@@ -1,4 +1,4 @@
-coroutine v0.1
+coroutine v0.2
 
 Copyright (c) 2012 Marcin Swiderski. All rights reserved.
 

@@ -41,14 +41,14 @@
 	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 	[self.window setRootViewController:[[[UIViewController alloc] init] autorelease]];
 	[self.window makeKeyAndVisible];
-
+	
 	std::cout << "BEGIN" << std::endl;
 	
 	const Coroutine& coroutine = TestCoroutine();
 	while (!coroutine.didFinish()) {
 		std::cout << "FOO";
 		int ret = coroutine();
-		std::cout << "\t" << ret << std::endl;
+		std::cout << " \t" << ret << std::endl;
 	}
 	
 	std::cout << "END" << std::endl;

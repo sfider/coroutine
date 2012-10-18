@@ -1,5 +1,5 @@
 //
-//  TestCoroutine.cpp
+//  Coroutine_i386.cpp
 //  coroutine
 //
 //  Created by Marcin Świderski on 8/9/12.
@@ -22,19 +22,20 @@
 //  3. This notice may not be removed or altered from any source distribution.
 //
 
-#include "TestCoroutine.h"
+#include "Coroutine.h"
 
-#include <iostream>
+#ifdef COROUTINE_I386
 
-int TestCoroutine::run() {
-	for (int i = 0; i != 16; ++i) {
-		
-		std::cout << "BAR \t" << i;
-		
-		if (i != 15) {
-			yield(i);
-		}
-	}
-	
-	return 15;
+#include <cstdlib>
+
+Coroutine::Coroutine()
+	: _stateFlags(0) {
+	posix_memalign((void **)&_stack, 16, COROUTINE_STACK_SIZE);
+	_stackBase = _stack + COROUTINE_STACK_SIZE;
 }
+
+Coroutine::~Coroutine() {
+	free(_stack);
+}
+
+#endif // COROUTINE_I386

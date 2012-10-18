@@ -25,6 +25,27 @@
 #ifndef coroutine_Coroutine_h
 #define coroutine_Coroutine_h
 
+#include <TargetConditionals.h>
+
+#if TARGET_IPHONE_SIMULATOR
+#define COROUTINE_I386
+
+#elif TARGET_OS_IPHONE
+#define COROUTINE_ARMV7
+
+#endif
+
+#define COROUTINE_STACK_SIZE			4096
+
+#define COROUTINE_OFFSET_STATEFLAGS		4
+#define COROUTINE_OFFSET_STACK			8
+#define COROUTINE_OFFSET_STACKBASE		12
+#define COROUTINE_OFFSET_STACKPOINTER	16
+
+#define COROUTINE_VTABLE_RUN			8
+
+#ifndef COROUTINE_ASM
+
 #include <stdint.h>
 
 class Coroutine {
@@ -44,7 +65,7 @@ public:
 	
 	int operator()() const;
 	
-	bool didFinish() const;
+	bool didFinish() const { return _stateFlags & StateFinished; }
 	
 protected:
 	virtual int run() = 0;
@@ -52,5 +73,6 @@ protected:
 	void yield(int ret);
 };
 
-#endif
+#endif // COROUTINE_ASM
 
+#endif

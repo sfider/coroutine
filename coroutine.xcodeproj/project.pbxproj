@@ -12,29 +12,41 @@
 		712D2F9515D44F56002FC37E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 712D2F9315D44F56002FC37E /* InfoPlist.strings */; };
 		712D2F9715D44F56002FC37E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9615D44F56002FC37E /* main.m */; };
 		712D2F9B15D44F56002FC37E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9A15D44F56002FC37E /* AppDelegate.mm */; };
-		712D2FA615D453F3002FC37E /* Coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA415D453F3002FC37E /* Coroutine.cpp */; };
 		712D2FA915D456B0002FC37E /* TestCoroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA715D456B0002FC37E /* TestCoroutine.cpp */; };
 		715FB5E2161B83BF00AD3B68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9615D44F56002FC37E /* main.m */; };
 		715FB5E3161B83BF00AD3B68 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9A15D44F56002FC37E /* AppDelegate.mm */; };
-		715FB5E4161B83BF00AD3B68 /* Coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA415D453F3002FC37E /* Coroutine.cpp */; };
 		715FB5E5161B83BF00AD3B68 /* TestCoroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA715D456B0002FC37E /* TestCoroutine.cpp */; };
 		715FB5E7161B83BF00AD3B68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8A15D44F56002FC37E /* UIKit.framework */; };
 		715FB5E8161B83BF00AD3B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8C15D44F56002FC37E /* Foundation.framework */; };
 		715FB5EA161B83BF00AD3B68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 712D2F9315D44F56002FC37E /* InfoPlist.strings */; };
 		715FB5F3161B841500AD3B68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9615D44F56002FC37E /* main.m */; };
 		715FB5F4161B841500AD3B68 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9A15D44F56002FC37E /* AppDelegate.mm */; };
-		715FB5F5161B841500AD3B68 /* Coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA415D453F3002FC37E /* Coroutine.cpp */; };
 		715FB5F6161B841500AD3B68 /* TestCoroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA715D456B0002FC37E /* TestCoroutine.cpp */; };
 		715FB5F8161B841500AD3B68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8A15D44F56002FC37E /* UIKit.framework */; };
 		715FB5F9161B841500AD3B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8C15D44F56002FC37E /* Foundation.framework */; };
 		715FB5FB161B841500AD3B68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 712D2F9315D44F56002FC37E /* InfoPlist.strings */; };
 		715FB604161B844600AD3B68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9615D44F56002FC37E /* main.m */; };
 		715FB605161B844600AD3B68 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 712D2F9A15D44F56002FC37E /* AppDelegate.mm */; };
-		715FB606161B844600AD3B68 /* Coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA415D453F3002FC37E /* Coroutine.cpp */; };
 		715FB607161B844600AD3B68 /* TestCoroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712D2FA715D456B0002FC37E /* TestCoroutine.cpp */; };
 		715FB609161B844600AD3B68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8A15D44F56002FC37E /* UIKit.framework */; };
 		715FB60A161B844600AD3B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8C15D44F56002FC37E /* Foundation.framework */; };
 		715FB60C161B844600AD3B68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 712D2F9315D44F56002FC37E /* InfoPlist.strings */; };
+		71966E411630B25600213897 /* Coroutine_i386.s in Sources */ = {isa = PBXBuildFile; fileRef = 71966E401630B25600213897 /* Coroutine_i386.s */; };
+		71966E421630B25600213897 /* Coroutine_i386.s in Sources */ = {isa = PBXBuildFile; fileRef = 71966E401630B25600213897 /* Coroutine_i386.s */; };
+		71966E431630B25600213897 /* Coroutine_i386.s in Sources */ = {isa = PBXBuildFile; fileRef = 71966E401630B25600213897 /* Coroutine_i386.s */; };
+		71966E441630B25600213897 /* Coroutine_i386.s in Sources */ = {isa = PBXBuildFile; fileRef = 71966E401630B25600213897 /* Coroutine_i386.s */; };
+		71966E461630BB6700213897 /* Coroutine_armv7.s in Sources */ = {isa = PBXBuildFile; fileRef = 71966E451630BB6700213897 /* Coroutine_armv7.s */; };
+		71966E471630BB6700213897 /* Coroutine_armv7.s in Sources */ = {isa = PBXBuildFile; fileRef = 71966E451630BB6700213897 /* Coroutine_armv7.s */; };
+		71966E481630BB6700213897 /* Coroutine_armv7.s in Sources */ = {isa = PBXBuildFile; fileRef = 71966E451630BB6700213897 /* Coroutine_armv7.s */; };
+		71966E491630BB6700213897 /* Coroutine_armv7.s in Sources */ = {isa = PBXBuildFile; fileRef = 71966E451630BB6700213897 /* Coroutine_armv7.s */; };
+		71D4D95E1627658800CB3368 /* Coroutine_armv7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71D4D95D1627658800CB3368 /* Coroutine_armv7.cpp */; };
+		71D4D95F1627658800CB3368 /* Coroutine_armv7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71D4D95D1627658800CB3368 /* Coroutine_armv7.cpp */; };
+		71D4D9601627658800CB3368 /* Coroutine_armv7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71D4D95D1627658800CB3368 /* Coroutine_armv7.cpp */; };
+		71D4D9611627658800CB3368 /* Coroutine_armv7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71D4D95D1627658800CB3368 /* Coroutine_armv7.cpp */; };
+		71D4D9641627668600CB3368 /* Coroutine_i386.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71D4D9631627668600CB3368 /* Coroutine_i386.cpp */; };
+		71D4D9651627668600CB3368 /* Coroutine_i386.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71D4D9631627668600CB3368 /* Coroutine_i386.cpp */; };
+		71D4D9661627668600CB3368 /* Coroutine_i386.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71D4D9631627668600CB3368 /* Coroutine_i386.cpp */; };
+		71D4D9671627668600CB3368 /* Coroutine_i386.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71D4D9631627668600CB3368 /* Coroutine_i386.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +59,6 @@
 		712D2F9815D44F56002FC37E /* coroutine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "coroutine-Prefix.pch"; sourceTree = "<group>"; };
 		712D2F9915D44F56002FC37E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		712D2F9A15D44F56002FC37E /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		712D2FA415D453F3002FC37E /* Coroutine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coroutine.cpp; sourceTree = "<group>"; };
 		712D2FA515D453F3002FC37E /* Coroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coroutine.h; sourceTree = "<group>"; };
 		712D2FA715D456B0002FC37E /* TestCoroutine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCoroutine.cpp; sourceTree = "<group>"; };
 		712D2FA815D456B0002FC37E /* TestCoroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCoroutine.h; sourceTree = "<group>"; };
@@ -56,6 +67,10 @@
 		715FB5EE161B83BF00AD3B68 /* coroutine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coroutine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		715FB5FF161B841500AD3B68 /* coroutine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coroutine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		715FB610161B844600AD3B68 /* coroutine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coroutine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71966E401630B25600213897 /* Coroutine_i386.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = Coroutine_i386.s; sourceTree = "<group>"; };
+		71966E451630BB6700213897 /* Coroutine_armv7.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = Coroutine_armv7.s; sourceTree = "<group>"; };
+		71D4D95D1627658800CB3368 /* Coroutine_armv7.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coroutine_armv7.cpp; sourceTree = "<group>"; };
+		71D4D9631627668600CB3368 /* Coroutine_i386.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coroutine_i386.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +149,10 @@
 			children = (
 				712D2F9A15D44F56002FC37E /* AppDelegate.mm */,
 				712D2F9915D44F56002FC37E /* AppDelegate.h */,
-				712D2FA415D453F3002FC37E /* Coroutine.cpp */,
+				71D4D95D1627658800CB3368 /* Coroutine_armv7.cpp */,
+				71966E451630BB6700213897 /* Coroutine_armv7.s */,
+				71D4D9631627668600CB3368 /* Coroutine_i386.cpp */,
+				71966E401630B25600213897 /* Coroutine_i386.s */,
 				712D2FA515D453F3002FC37E /* Coroutine.h */,
 				712D2FA715D456B0002FC37E /* TestCoroutine.cpp */,
 				712D2FA815D456B0002FC37E /* TestCoroutine.h */,
@@ -296,8 +314,11 @@
 			files = (
 				712D2F9715D44F56002FC37E /* main.m in Sources */,
 				712D2F9B15D44F56002FC37E /* AppDelegate.mm in Sources */,
-				712D2FA615D453F3002FC37E /* Coroutine.cpp in Sources */,
 				712D2FA915D456B0002FC37E /* TestCoroutine.cpp in Sources */,
+				71D4D95E1627658800CB3368 /* Coroutine_armv7.cpp in Sources */,
+				71D4D9641627668600CB3368 /* Coroutine_i386.cpp in Sources */,
+				71966E411630B25600213897 /* Coroutine_i386.s in Sources */,
+				71966E461630BB6700213897 /* Coroutine_armv7.s in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,8 +328,11 @@
 			files = (
 				715FB5E2161B83BF00AD3B68 /* main.m in Sources */,
 				715FB5E3161B83BF00AD3B68 /* AppDelegate.mm in Sources */,
-				715FB5E4161B83BF00AD3B68 /* Coroutine.cpp in Sources */,
 				715FB5E5161B83BF00AD3B68 /* TestCoroutine.cpp in Sources */,
+				71D4D95F1627658800CB3368 /* Coroutine_armv7.cpp in Sources */,
+				71D4D9651627668600CB3368 /* Coroutine_i386.cpp in Sources */,
+				71966E421630B25600213897 /* Coroutine_i386.s in Sources */,
+				71966E471630BB6700213897 /* Coroutine_armv7.s in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,8 +342,11 @@
 			files = (
 				715FB5F3161B841500AD3B68 /* main.m in Sources */,
 				715FB5F4161B841500AD3B68 /* AppDelegate.mm in Sources */,
-				715FB5F5161B841500AD3B68 /* Coroutine.cpp in Sources */,
 				715FB5F6161B841500AD3B68 /* TestCoroutine.cpp in Sources */,
+				71D4D9601627658800CB3368 /* Coroutine_armv7.cpp in Sources */,
+				71D4D9661627668600CB3368 /* Coroutine_i386.cpp in Sources */,
+				71966E431630B25600213897 /* Coroutine_i386.s in Sources */,
+				71966E481630BB6700213897 /* Coroutine_armv7.s in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +356,11 @@
 			files = (
 				715FB604161B844600AD3B68 /* main.m in Sources */,
 				715FB605161B844600AD3B68 /* AppDelegate.mm in Sources */,
-				715FB606161B844600AD3B68 /* Coroutine.cpp in Sources */,
 				715FB607161B844600AD3B68 /* TestCoroutine.cpp in Sources */,
+				71D4D9611627658800CB3368 /* Coroutine_armv7.cpp in Sources */,
+				71D4D9671627668600CB3368 /* Coroutine_i386.cpp in Sources */,
+				71966E441630B25600213897 /* Coroutine_i386.s in Sources */,
+				71966E491630BB6700213897 /* Coroutine_armv7.s in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
