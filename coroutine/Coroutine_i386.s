@@ -3,7 +3,7 @@
 //  coroutine
 //
 //  Created by Marcin Swiderski on 10/18/12.
-//  Copyright (c) 2012 LoonyWare Marcin Świderski. All rights reserved.
+//  Copyright (c) 2012 Marcin Świderski. All rights reserved.
 //
 //  This software is provided 'as-is', without any express or implied
 //  warranty.  In no event will the authors be held liable for any damages
@@ -84,10 +84,17 @@ L_FIRST:
 	mov			COROUTINE_VTABLE_RUN(%edx), %edx
 	call		*%edx
 
+#if COROUTINE_SAFE
+	// Validate the coroutine.
+	movl		%eax, 4(%esp)
+	call		__ZN9Coroutine8validateEv
+	movl		4(%esp), %eax
+#endif
+
 	// Restore 'this' pointer to ECX (EAX holds return value) and remove padding.
 	popl		%ecx
 	addl		$8, %esp
-	
+
 	// Mark as finished.
 	movl		COROUTINE_OFFSET_STATEFLAGS(%ecx), %edx
 	orl			$2, %edx
@@ -122,9 +129,20 @@ __ZN9Coroutine5yieldEi:
 	pushl		%ebx
 	pushl		%esi
 	pushl		%edi
-	
+
 	// Save ESP to _stackPointer.
 	movl		%esp, COROUTINE_OFFSET_STACKPOINTER(%edx)
+
+#if COROUTINE_SAFE
+	// Validate the coroutine.
+	subl		$12, %esp
+	movl		%eax, 4(%esp)
+	movl		%edx, (%esp)
+	call		__ZN9Coroutine8validateEv
+	movl		(%esp), %edx
+	movl		4(%esp), %eax
+	addl		$12, %esp
+#endif
 	
 	// Move ESP to caller context near the base of the stack (_stackBase).
 	movl		COROUTINE_OFFSET_STACKBASE(%edx), %esp

@@ -1,8 +1,8 @@
 //
-//  Coroutine_i386.cpp
+//  Coroutine.cpp
 //  coroutine
 //
-//  Created by Marcin Świderski on 8/9/12.
+//  Created by Marcin Swiderski on 10/23/12.
 //  Copyright (c) 2012 Marcin Świderski. All rights reserved.
 //
 //  This software is provided 'as-is', without any express or implied
@@ -24,23 +24,15 @@
 
 #include "Coroutine.h"
 
-#ifdef COROUTINE_I386
-
-#include <cstdlib>
-
-Coroutine::Coroutine()
-	: _stateFlags(0) {
-	
-	posix_memalign((void **)&_stack, 16, COROUTINE_STACK_SIZE);
 #if COROUTINE_SAFE
-	memset(_stack, 0, COROUTINE_STACK_SIZE);
-#endif
 
-	_stackBase = _stack + COROUTINE_STACK_SIZE;
+void Coroutine::validate() {
+	if (_stackPointer <= _stack) {
+		COROUTINE_ON_OUT_OF_BOUNDS();
+	
+	} else if (*_stack != 0) {
+		COROUTINE_ON_OUT_OF_BOUNDS();
+	}
 }
 
-Coroutine::~Coroutine() {
-	free(_stack);
-}
-
-#endif // COROUTINE_I386
+#endif // COROUTINE_SAFE

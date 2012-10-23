@@ -29,7 +29,12 @@
 Coroutine::Coroutine()
 	: _stateFlags(0)
 	, _stack(new uint8_t[COROUTINE_STACK_SIZE])
-	, _stackBase(_stack + COROUTINE_STACK_SIZE) {}
+	, _stackBase(_stack + COROUTINE_STACK_SIZE) {
+
+#if COROUTINE_SAFE
+	memset(_stack, 0, COROUTINE_STACK_SIZE);
+#endif
+}
 
 Coroutine::~Coroutine() {
 	delete [] _stack;

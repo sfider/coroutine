@@ -3,7 +3,7 @@
 //  coroutine
 //
 //  Created by Marcin Swiderski on 10/19/12.
-//  Copyright (c) 2012 LoonyWare Marcin Świderski. All rights reserved.
+//  Copyright (c) 2012 Marcin Świderski. All rights reserved.
 //
 //  This software is provided 'as-is', without any express or implied
 //  warranty.  In no event will the authors be held liable for any damages
@@ -84,6 +84,16 @@ L_FIRST:
 	// Restore 'this' pointer to r2, r0 holds return value.
 	pop			{r2}
 
+#if COROUTINE_SAFE
+	// Validate the coroutine.
+	mov			r4, r0
+	mov			r5, r2
+	mov			r0, r2
+	blx			__ZN9Coroutine8validateEv
+	mov			r2, r5
+	mov			r0, r4
+#endif
+
 	// Mark as finished.
 	ldr			r1, [r2, #COROUTINE_OFFSET_STATEFLAGS]
 	orr			r1, r1, #2
@@ -113,10 +123,19 @@ __ZN9Coroutine5yieldEi:
 	add			r7, sp, #12
 	push		{r8, r10, r11}
 	vstmdb		sp!, {d8-d15}
-	
+
 	// Save SP to _stackPointer.
 	str			sp, [r0, #COROUTINE_OFFSET_STACKPOINTER]
 	
+#if COROUTINE_SAFE
+	// Validate the coroutine.
+	mov			r4, r0
+	mov			r5, r1
+	blx			__ZN9Coroutine8validateEv
+	mov			r1, r5
+	mov			r0, r4
+#endif
+
 	// Move SP to caller context near the base of the stack (_stackBase).
 	ldr			r2, [r0, #COROUTINE_OFFSET_STACKBASE]
 	sub			sp, r2, #100

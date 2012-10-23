@@ -44,6 +44,11 @@
 
 #define COROUTINE_VTABLE_RUN			8
 
+#if DEBUG
+#define COROUTINE_SAFE					1
+#define COROUTINE_ON_OUT_OF_BOUNDS()	assert(false && "Coroutine exceeded its stack!!!");
+#endif
+
 #ifndef COROUTINE_ASM
 
 #include <stdint.h>
@@ -66,11 +71,17 @@ public:
 	int operator()() const;
 	
 	bool didFinish() const { return _stateFlags & StateFinished; }
-	
+
 protected:
 	virtual int run() = 0;
 	
 	void yield(int ret);
+
+#if COROUTINE_SAFE
+	void validate();
+#else
+	void validate() {}
+#endif
 };
 
 #endif // COROUTINE_ASM
