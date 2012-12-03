@@ -1,5 +1,5 @@
 //
-//  TestCoroutine.h
+//  Coroutine_i386.cpp
 //  coroutine
 //
 //  Created by Marcin Świderski on 8/9/12.
@@ -22,15 +22,27 @@
 //  3. This notice may not be removed or altered from any source distribution.
 //
 
-#ifndef coroutine_TestCoroutine_h
-#define coroutine_TestCoroutine_h
-
 #include "Coroutine.h"
 
-class TestCoroutine : public Coroutine {
-protected:
-	virtual int run();
-};
+#ifdef COROUTINE_I386
 
+#include <cstdlib>
+#include <cstring>
+
+Coroutine::Coroutine()
+	: _stateFlags(0) {
+	
+	posix_memalign((void **)&_stack, 16, COROUTINE_STACK_SIZE);
+#if COROUTINE_SAFE
+	memset(_stack, 0xFF, COROUTINE_STACK_SIZE);
 #endif
 
+	_stackBase = _stack + COROUTINE_STACK_SIZE;
+	_stackPointer = _stackBase;
+}
+
+Coroutine::~Coroutine() {
+	free(_stack);
+}
+
+#endif // COROUTINE_I386

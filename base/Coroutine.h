@@ -25,12 +25,10 @@
 #ifndef coroutine_Coroutine_h
 #define coroutine_Coroutine_h
 
-#include <TargetConditionals.h>
-
-#if TARGET_IPHONE_SIMULATOR
+#if defined(__i386__)
 #define COROUTINE_I386
 
-#elif TARGET_OS_IPHONE
+#elif defined(__arm__)
 #define COROUTINE_ARMV7
 
 #endif
@@ -51,6 +49,8 @@
 
 #ifndef COROUTINE_ASM
 
+#include <cstddef>
+#include <cassert>
 #include <stdint.h>
 
 class Coroutine {

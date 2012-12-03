@@ -1,5 +1,5 @@
 //
-//  AppDelegate.m
+//  main.m
 //  coroutine
 //
 //  Created by Marcin Świderski on 8/9/12.
@@ -8,11 +8,11 @@
 //  This software is provided 'as-is', without any express or implied
 //  warranty.  In no event will the authors be held liable for any damages
 //  arising from the use of this software.
-//  
+//
 //  Permission is granted to anyone to use this software for any purpose,
 //  including commercial applications, and to alter it and redistribute it
 //  freely, subject to the following restrictions:
-//  
+//
 //  1. The origin of this software must not be misrepresented; you must not
 //     claim that you wrote the original software. If you use this software
 //     in a product, an acknowledgment in the product documentation would be
@@ -22,43 +22,13 @@
 //  3. This notice may not be removed or altered from any source distribution.
 //
 
+#import <UIKit/UIKit.h>
+
 #import "AppDelegate.h"
 
-#include "TestCoroutine.h"
-
-#include <iostream>
-
-@implementation AppDelegate
-
-@synthesize window = _window;
-
-- (void)dealloc {
-	[_window release];
-	[super dealloc];
+int main(int argc, char *argv[]) {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	bool ret = UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+	[pool drain];
+	return ret;
 }
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-	[self.window setRootViewController:[[[UIViewController alloc] init] autorelease]];
-	[self.window makeKeyAndVisible];
-	
-	std::cout << "BEGIN" << std::endl;
-	
-	TestCoroutine coroutine;
-	
-	while (!coroutine.didFinish()) {
-		std::cout << "FOO";
-		int ret = coroutine();
-		std::cout << " \t" << ret << std::endl;
-	}
-	
-	std::cout << "END" << std::endl;
-	
-#if COROUTINE_SAFE
-	std::cout << "TestCoroutine used approximately " << coroutine.estimateUsedStackSize() << " bytes of stack." << std::endl;
-#endif
-	
-	return YES;
-}
-
-@end

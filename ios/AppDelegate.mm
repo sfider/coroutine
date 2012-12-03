@@ -1,5 +1,5 @@
 //
-//  Coroutine_i386.cpp
+//  AppDelegate.m
 //  coroutine
 //
 //  Created by Marcin Świderski on 8/9/12.
@@ -22,26 +22,27 @@
 //  3. This notice may not be removed or altered from any source distribution.
 //
 
-#include "Coroutine.h"
+#import "AppDelegate.h"
 
-#ifdef COROUTINE_I386
+#include "TestCoroutine.h"
 
-#include <cstdlib>
+@implementation AppDelegate
 
-Coroutine::Coroutine()
-	: _stateFlags(0) {
+@synthesize window = _window;
+
+- (void)dealloc {
+	[_window release];
+	[super dealloc];
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+	[self.window setRootViewController:[[[UIViewController alloc] init] autorelease]];
+	[self.window makeKeyAndVisible];
+
+	TestCoroutine::test();
 	
-	posix_memalign((void **)&_stack, 16, COROUTINE_STACK_SIZE);
-#if COROUTINE_SAFE
-	memset(_stack, 0xFF, COROUTINE_STACK_SIZE);
-#endif
-
-	_stackBase = _stack + COROUTINE_STACK_SIZE;
-	_stackPointer = _stackBase;
+	return YES;
 }
 
-Coroutine::~Coroutine() {
-	free(_stack);
-}
-
-#endif // COROUTINE_I386
+@end

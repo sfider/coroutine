@@ -1,8 +1,8 @@
 //
-//  TestCoroutine.cpp
+//  main.cpp
 //  coroutine
 //
-//  Created by Marcin Świderski on 8/9/12.
+//  Created by Marcin Swiderski on 12/3/12.
 //  Copyright (c) 2012 Marcin Świderski. All rights reserved.
 //
 //  This software is provided 'as-is', without any express or implied
@@ -24,17 +24,8 @@
 
 #include "TestCoroutine.h"
 
-#include <iostream>
-
-int TestCoroutine::run() {
-	for (int i = 0; i != 16; ++i) {
-		
-		std::cout << "BAR \t" << i;
-		
-		if (i != 15) {
-			yield(i);
-		}
-	}
-	
-	return 15;
+int main() {
+	TestCoroutine::test();
+    return 0;
 }
+
