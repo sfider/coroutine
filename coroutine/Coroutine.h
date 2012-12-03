@@ -79,8 +79,6 @@ protected:
 
 #if COROUTINE_SAFE
 	void validate();
-#else
-	void validate() {}
 #endif
 };
 
