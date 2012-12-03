@@ -68,9 +68,15 @@ public:
 	Coroutine();
 	virtual ~Coroutine();
 	
-	int operator()() const;
+	int operator()();
 	
 	bool didFinish() const { return _stateFlags & StateFinished; }
+
+#if COROUTINE_SAFE
+
+	size_t estimateUsedStackSize() const;
+	
+#endif
 
 protected:
 	virtual int run() = 0;
@@ -78,7 +84,9 @@ protected:
 	void yield(int ret);
 
 #if COROUTINE_SAFE
-	void validate();
+
+	void validate() const;
+	
 #endif
 };
 

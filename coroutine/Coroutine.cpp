@@ -26,11 +26,21 @@
 
 #if COROUTINE_SAFE
 
-void Coroutine::validate() {
+size_t Coroutine::estimateUsedStackSize() const {
+	size_t usedStackSize = COROUTINE_STACK_SIZE;
+	
+	for (uint8_t *p = _stack; p != _stackBase && *p == 0xFF; ++p) {
+		--usedStackSize;
+	}
+	
+	return usedStackSize;
+}
+
+void Coroutine::validate() const {
 	if (_stackPointer <= _stack) {
 		COROUTINE_ON_OUT_OF_BOUNDS();
 	
-	} else if (*_stack != 0) {
+	} else if (*_stack != 0xFF) {
 		COROUTINE_ON_OUT_OF_BOUNDS();
 	}
 }

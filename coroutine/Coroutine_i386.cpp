@@ -33,10 +33,11 @@ Coroutine::Coroutine()
 	
 	posix_memalign((void **)&_stack, 16, COROUTINE_STACK_SIZE);
 #if COROUTINE_SAFE
-	memset(_stack, 0, COROUTINE_STACK_SIZE);
+	memset(_stack, 0xFF, COROUTINE_STACK_SIZE);
 #endif
 
 	_stackBase = _stack + COROUTINE_STACK_SIZE;
+	_stackPointer = _stackBase;
 }
 
 Coroutine::~Coroutine() {

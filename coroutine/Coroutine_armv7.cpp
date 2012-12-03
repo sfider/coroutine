@@ -29,10 +29,11 @@
 Coroutine::Coroutine()
 	: _stateFlags(0)
 	, _stack(new uint8_t[COROUTINE_STACK_SIZE])
-	, _stackBase(_stack + COROUTINE_STACK_SIZE) {
+	, _stackBase(_stack + COROUTINE_STACK_SIZE)
+	, _stackPointer(_stackBase) {
 
 #if COROUTINE_SAFE
-	memset(_stack, 0, COROUTINE_STACK_SIZE);
+	memset(_stack, 0xFF, COROUTINE_STACK_SIZE);
 #endif
 }
 

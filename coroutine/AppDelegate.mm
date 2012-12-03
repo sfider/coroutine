@@ -44,7 +44,8 @@
 	
 	std::cout << "BEGIN" << std::endl;
 	
-	const Coroutine& coroutine = TestCoroutine();
+	TestCoroutine coroutine;
+	
 	while (!coroutine.didFinish()) {
 		std::cout << "FOO";
 		int ret = coroutine();
@@ -52,6 +53,10 @@
 	}
 	
 	std::cout << "END" << std::endl;
+	
+#if COROUTINE_SAFE
+	std::cout << "TestCoroutine used approximately " << coroutine.estimateUsedStackSize() << " bytes of stack." << std::endl;
+#endif
 	
 	return YES;
 }

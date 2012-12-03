@@ -31,12 +31,12 @@
 	.section	__TEXT,__text,regular,pure_instructions
 
 //----------------------------------------------------------------------------------------------------------------------
-// int Coroutine::operator()() const
+// int Coroutine::operator()()
 //----------------------------------------------------------------------------------------------------------------------
 
-	.globl	__ZNK9CoroutineclEv
+	.globl	__ZN9CoroutineclEv
 	.align	1, 0x90
-__ZNK9CoroutineclEv:
+__ZN9CoroutineclEv:
 
 	// Load 'this' to EAX.
 	movl		4(%esp), %eax
@@ -87,7 +87,7 @@ L_FIRST:
 #if COROUTINE_SAFE
 	// Validate the coroutine.
 	movl		%eax, 4(%esp)
-	call		__ZN9Coroutine8validateEv
+	call		__ZNK9Coroutine8validateEv
 	movl		4(%esp), %eax
 #endif
 
@@ -138,7 +138,7 @@ __ZN9Coroutine5yieldEi:
 	subl		$12, %esp
 	movl		%eax, 4(%esp)
 	movl		%edx, (%esp)
-	call		__ZN9Coroutine8validateEv
+	call		__ZNK9Coroutine8validateEv
 	movl		(%esp), %edx
 	movl		4(%esp), %eax
 	addl		$12, %esp

@@ -32,14 +32,14 @@
 	.section	__TEXT,__text,regular,pure_instructions
 
 //----------------------------------------------------------------------------------------------------------------------
-// int Coroutine::operator()() const
+// int Coroutine::operator()()
 //----------------------------------------------------------------------------------------------------------------------
 
-	.globl	__ZNK9CoroutineclEv
+	.globl	__ZN9CoroutineclEv
 	.align	2
 	.code	16
-	.thumb_func	__ZNK9CoroutineclEv
-__ZNK9CoroutineclEv:
+	.thumb_func	__ZN9CoroutineclEv
+__ZN9CoroutineclEv:
 
 	// Move SP to _stackBase, so the prolog can be saved directly to base of the coroutine stack.
 	ldr			r1, [r0, #COROUTINE_OFFSET_STACKBASE]
@@ -89,7 +89,7 @@ L_FIRST:
 	mov			r4, r0
 	mov			r5, r2
 	mov			r0, r2
-	blx			__ZN9Coroutine8validateEv
+	blx			__ZNK9Coroutine8validateEv
 	mov			r2, r5
 	mov			r0, r4
 #endif
@@ -131,7 +131,7 @@ __ZN9Coroutine5yieldEi:
 	// Validate the coroutine.
 	mov			r4, r0
 	mov			r5, r1
-	blx			__ZN9Coroutine8validateEv
+	blx			__ZNK9Coroutine8validateEv
 	mov			r1, r5
 	mov			r0, r4
 #endif
