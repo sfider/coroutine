@@ -24,10 +24,50 @@
 
 #include "Coroutine.h"
 
+#include <cstring>
+
+Coroutine::Coroutine()
+	: _flags(StackOwned)
+	, _stack(new uint8_t[COROUTINE_STACK_SIZE])
+	, _stackBase(_stack + COROUTINE_STACK_SIZE)
+	, _stackPointer(_stackBase) {
+
+#if COROUTINE_SAFE
+	memset(_stack, 0xFF, COROUTINE_STACK_SIZE);
+#endif
+	alignStackBase();
+}
+
+Coroutine::Coroutine(uint8_t* stack, uint8_t* stackBase, bool deleteStack)
+	: _flags(deleteStack ? StackOwned : 0)
+	, _stack(stack)
+	, _stackBase(stackBase)
+	, _stackPointer(stackBase) {
+	
+
+#if COROUTINE_SAFE
+	if (isStackOwned()) {
+		memset(_stack, 0xFF, _stackBase - _stack);
+	}
+#endif
+	alignStackBase();
+}
+
+Coroutine::~Coroutine() {
+	if (isStackOwned()) {
+		delete [] _stack;
+	}
+}
+
 #if COROUTINE_SAFE
 
 size_t Coroutine::estimateUsedStackSize() const {
-	size_t usedStackSize = COROUTINE_STACK_SIZE;
+	size_t usedStackSize = _stackBase - _stack;
+	
+	if (!isStackOwned()) {
+		// Don't estimate size of stack that is not owned.
+		return usedStackSize;
+	}
 	
 	for (uint8_t *p = _stack; p != _stackBase && *p == 0xFF; ++p) {
 		--usedStackSize;
@@ -37,6 +77,11 @@ size_t Coroutine::estimateUsedStackSize() const {
 }
 
 void Coroutine::validate() const {
+	if (!isStackOwned()) {
+		// Don't validate stack that is not owned.
+		return;
+	}
+	
 	if (_stackPointer <= _stack) {
 		COROUTINE_ON_OUT_OF_BOUNDS();
 	

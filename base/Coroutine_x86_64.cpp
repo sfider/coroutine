@@ -26,23 +26,11 @@
 
 #ifdef COROUTINE_X86_64
 
-#include <cstdlib>
-#include <cstring>
-
-Coroutine::Coroutine()
-	: _stateFlags(0) {
-	
-	posix_memalign((void **)&_stack, 16, COROUTINE_STACK_SIZE);
-#if COROUTINE_SAFE
-	memset(_stack, 0xFF, COROUTINE_STACK_SIZE);
-#endif
-
-	_stackBase = _stack + COROUTINE_STACK_SIZE - 8; // Substruct 8 for proper alignment.
-	_stackPointer = _stackBase;
-}
-
-Coroutine::~Coroutine() {
-	free(_stack);
+void Coroutine::alignStackBase() {
+	// Align to 16 bytes.
+	_stackBase = reinterpret_cast<uint8_t*>(reinterpret_cast<ptrdiff_t>(_stackBase) & 0xffffffffffffff00lu);
+	// Substruct 8 for proper alignment.
+	_stackBase -= 8;
 }
 
 #endif // COROUTINE_X86_64

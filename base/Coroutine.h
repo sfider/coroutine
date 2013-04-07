@@ -78,21 +78,31 @@
 class Coroutine {
 	enum {
 		StateStarted	= 0x1,
-		StateFinished	= 0x2
+		StateFinished	= 0x2,
+		StackOwned		= 0x4
 	};
 
-	unsigned long	_stateFlags;
+	unsigned long	_flags;
 	uint8_t*		_stack;				// Heap allocated stack for coroutine.
 	uint8_t*		_stackBase;			// Pointer to base of the coroutine stack.
 	uint8_t*		_stackPointer;		// Coroutine stack pointer.
 	
+	// Architecture defined stack aligning.
+	void alignStackBase();
+
 public:
 	Coroutine();
+	Coroutine(uint8_t* stack, uint8_t* stackBase, bool deleteStack = false);
 	virtual ~Coroutine();
 	
 	int operator()();
 	
-	bool didFinish() const { return _stateFlags & StateFinished; }
+	bool didFinish() const { return _flags & StateFinished; }
+	bool isStackOwned() const { return _flags & StackOwned; }
+	
+	uint8_t* getStack() const { return _stack; }
+	uint8_t* getStackBase() const { return _stackBase; }
+	uint8_t* getStackPointer() const { return _stackPointer; }
 
 #if COROUTINE_SAFE
 

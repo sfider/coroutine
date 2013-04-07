@@ -26,23 +26,9 @@
 
 #ifdef COROUTINE_I386
 
-#include <cstdlib>
-#include <cstring>
-
-Coroutine::Coroutine()
-	: _stateFlags(0) {
-	
-	posix_memalign((void **)&_stack, 16, COROUTINE_STACK_SIZE);
-#if COROUTINE_SAFE
-	memset(_stack, 0xFF, COROUTINE_STACK_SIZE);
-#endif
-
-	_stackBase = _stack + COROUTINE_STACK_SIZE;
-	_stackPointer = _stackBase;
-}
-
-Coroutine::~Coroutine() {
-	free(_stack);
+void Coroutine::alignStackBase() {
+	// Align to 16 bytes.
+	_stackBase = reinterpret_cast<uint8_t*>(reinterpret_cast<ptrdiff_t>(_stackBase) & 0xffffff00lu);
 }
 
 #endif // COROUTINE_I386
