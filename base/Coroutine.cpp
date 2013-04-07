@@ -3,7 +3,7 @@
 //  coroutine
 //
 //  Created by Marcin Swiderski on 10/23/12.
-//  Copyright (c) 2012 Marcin Świderski. All rights reserved.
+//  Copyright (c) 2012 Marcin Świderski.
 //
 //  This software is provided 'as-is', without any express or implied
 //  warranty.  In no event will the authors be held liable for any damages

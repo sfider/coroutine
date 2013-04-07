@@ -1,6 +1,6 @@
-coroutine v0.2
+coroutine v0.3
 
-Copyright (c) 2012 Marcin Swiderski. All rights reserved.
+Copyright (c) 2012 Marcin Swiderski.
 
 This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages

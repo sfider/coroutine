@@ -62,10 +62,6 @@
 		711DD81F166D2D66005D61B5 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 711DD818166D2D66005D61B5 /* AppDelegate.mm */; };
 		711DD820166D2D66005D61B5 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 711DD818166D2D66005D61B5 /* AppDelegate.mm */; };
 		711DD821166D2D66005D61B5 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 711DD818166D2D66005D61B5 /* AppDelegate.mm */; };
-		711DD822166D2D66005D61B5 /* coroutine-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 711DD819166D2D66005D61B5 /* coroutine-Info.plist */; };
-		711DD823166D2D66005D61B5 /* coroutine-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 711DD819166D2D66005D61B5 /* coroutine-Info.plist */; };
-		711DD824166D2D66005D61B5 /* coroutine-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 711DD819166D2D66005D61B5 /* coroutine-Info.plist */; };
-		711DD825166D2D66005D61B5 /* coroutine-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 711DD819166D2D66005D61B5 /* coroutine-Info.plist */; };
 		711DD82A166D2D66005D61B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 711DD81D166D2D66005D61B5 /* main.m */; };
 		711DD82B166D2D66005D61B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 711DD81D166D2D66005D61B5 /* main.m */; };
 		711DD82C166D2D66005D61B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 711DD81D166D2D66005D61B5 /* main.m */; };
@@ -434,7 +430,7 @@
 		712D2F7D15D44F55002FC37E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "LoonyWare Marcin Świderski";
 			};
 			buildConfigurationList = 712D2F8015D44F55002FC37E /* Build configuration list for PBXProject "coroutine" */;
@@ -466,7 +462,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				711DD822166D2D66005D61B5 /* coroutine-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +469,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				711DD823166D2D66005D61B5 /* coroutine-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +476,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				711DD824166D2D66005D61B5 /* coroutine-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +483,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				711DD825166D2D66005D61B5 /* coroutine-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +755,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -791,6 +787,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
