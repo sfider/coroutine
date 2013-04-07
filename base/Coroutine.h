@@ -28,10 +28,19 @@
 #if defined(__i386__)
 #define COROUTINE_I386
 
+#elif defined(__x86_64__)
+#define COROUTINE_X86_64
+#define COROUTINE_64BIT
+
 #elif defined(__arm__)
 #define COROUTINE_ARMV7
 
+#else
+#error "Coroutine: architecture not supported!!!"
+
 #endif
+
+#ifndef COROUTINE_64BIT
 
 #define COROUTINE_STACK_SIZE			4096
 
@@ -41,6 +50,19 @@
 #define COROUTINE_OFFSET_STACKPOINTER	16
 
 #define COROUTINE_VTABLE_RUN			8
+
+#else
+
+#define COROUTINE_STACK_SIZE			8192
+
+#define COROUTINE_OFFSET_STATEFLAGS		8
+#define COROUTINE_OFFSET_STACK			16
+#define COROUTINE_OFFSET_STACKBASE		24
+#define COROUTINE_OFFSET_STACKPOINTER	32
+
+#define COROUTINE_VTABLE_RUN			16
+
+#endif
 
 #if DEBUG
 #define COROUTINE_SAFE					1
@@ -59,7 +81,7 @@ class Coroutine {
 		StateFinished	= 0x2
 	};
 
-	uint32_t		_stateFlags;
+	unsigned long	_stateFlags;
 	uint8_t*		_stack;				// Heap allocated stack for coroutine.
 	uint8_t*		_stackBase;			// Pointer to base of the coroutine stack.
 	uint8_t*		_stackPointer;		// Coroutine stack pointer.

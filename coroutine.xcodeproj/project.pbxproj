@@ -75,6 +75,14 @@
 		715FB5F9161B841500AD3B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8C15D44F56002FC37E /* Foundation.framework */; };
 		715FB609161B844600AD3B68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8A15D44F56002FC37E /* UIKit.framework */; };
 		715FB60A161B844600AD3B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712D2F8C15D44F56002FC37E /* Foundation.framework */; };
+		716D29041711B65E00777826 /* Coroutine_x86_64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716D29021711B65D00777826 /* Coroutine_x86_64.cpp */; };
+		716D29051711B65E00777826 /* Coroutine_x86_64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716D29021711B65D00777826 /* Coroutine_x86_64.cpp */; };
+		716D29061711B65E00777826 /* Coroutine_x86_64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716D29021711B65D00777826 /* Coroutine_x86_64.cpp */; };
+		716D29071711B65E00777826 /* Coroutine_x86_64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716D29021711B65D00777826 /* Coroutine_x86_64.cpp */; };
+		716D29081711BB3B00777826 /* Coroutine_x86_64.s in Sources */ = {isa = PBXBuildFile; fileRef = 716D29031711B65D00777826 /* Coroutine_x86_64.s */; };
+		716D29091711BB5200777826 /* Coroutine_x86_64.s in Sources */ = {isa = PBXBuildFile; fileRef = 716D29031711B65D00777826 /* Coroutine_x86_64.s */; };
+		716D290A1711BB5600777826 /* Coroutine_x86_64.s in Sources */ = {isa = PBXBuildFile; fileRef = 716D29031711B65D00777826 /* Coroutine_x86_64.s */; };
+		716D290B1711BB5B00777826 /* Coroutine_x86_64.s in Sources */ = {isa = PBXBuildFile; fileRef = 716D29031711B65D00777826 /* Coroutine_x86_64.s */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -143,6 +151,8 @@
 		715FB5EE161B83BF00AD3B68 /* coroutine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coroutine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		715FB5FF161B841500AD3B68 /* coroutine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coroutine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		715FB610161B844600AD3B68 /* coroutine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coroutine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		716D29021711B65D00777826 /* Coroutine_x86_64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coroutine_x86_64.cpp; sourceTree = "<group>"; };
+		716D29031711B65D00777826 /* Coroutine_x86_64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = Coroutine_x86_64.s; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +232,8 @@
 				711DD7F3166D2D51005D61B5 /* Coroutine_armv7.s */,
 				711DD7F4166D2D51005D61B5 /* Coroutine_i386.cpp */,
 				711DD7F5166D2D51005D61B5 /* Coroutine_i386.s */,
+				716D29021711B65D00777826 /* Coroutine_x86_64.cpp */,
+				716D29031711B65D00777826 /* Coroutine_x86_64.s */,
 				711DD7F6166D2D51005D61B5 /* TestCoroutine.cpp */,
 				711DD7F7166D2D51005D61B5 /* TestCoroutine.h */,
 			);
@@ -498,6 +510,8 @@
 				7118AE78166D2FAA00956CAF /* Coroutine_armv7.s in Sources */,
 				7118AE79166D2FAA00956CAF /* Coroutine_i386.cpp in Sources */,
 				7118AE7A166D2FAA00956CAF /* Coroutine_i386.s in Sources */,
+				716D29051711B65E00777826 /* Coroutine_x86_64.cpp in Sources */,
+				716D29091711BB5200777826 /* Coroutine_x86_64.s in Sources */,
 				7118AE7B166D2FAA00956CAF /* TestCoroutine.cpp in Sources */,
 				7118AE7C166D2FAA00956CAF /* main.cpp in Sources */,
 			);
@@ -512,6 +526,8 @@
 				7118AE88166D313B00956CAF /* Coroutine_armv7.s in Sources */,
 				7118AE89166D313B00956CAF /* Coroutine_i386.cpp in Sources */,
 				7118AE8A166D313B00956CAF /* Coroutine_i386.s in Sources */,
+				716D29061711B65E00777826 /* Coroutine_x86_64.cpp in Sources */,
+				716D290A1711BB5600777826 /* Coroutine_x86_64.s in Sources */,
 				7118AE8B166D313B00956CAF /* TestCoroutine.cpp in Sources */,
 				7118AE8C166D313B00956CAF /* main.cpp in Sources */,
 			);
@@ -526,6 +542,8 @@
 				7118AE98166D316A00956CAF /* Coroutine_armv7.s in Sources */,
 				7118AE99166D316A00956CAF /* Coroutine_i386.cpp in Sources */,
 				7118AE9A166D316A00956CAF /* Coroutine_i386.s in Sources */,
+				716D29071711B65E00777826 /* Coroutine_x86_64.cpp in Sources */,
+				716D290B1711BB5B00777826 /* Coroutine_x86_64.s in Sources */,
 				7118AE9B166D316A00956CAF /* TestCoroutine.cpp in Sources */,
 				7118AE9C166D316A00956CAF /* main.cpp in Sources */,
 			);
@@ -540,6 +558,8 @@
 				711DD806166D2D51005D61B5 /* Coroutine_armv7.s in Sources */,
 				711DD80B166D2D51005D61B5 /* Coroutine_i386.cpp in Sources */,
 				711DD810166D2D51005D61B5 /* Coroutine_i386.s in Sources */,
+				716D29041711B65E00777826 /* Coroutine_x86_64.cpp in Sources */,
+				716D29081711BB3B00777826 /* Coroutine_x86_64.s in Sources */,
 				711DD815166D2D51005D61B5 /* TestCoroutine.cpp in Sources */,
 				711DD831166D2D7A005D61B5 /* main.cpp in Sources */,
 			);
